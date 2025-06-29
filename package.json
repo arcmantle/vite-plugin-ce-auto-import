@@ -2,10 +2,10 @@
 	"name": "@arcmantle/vite-plugin-ce-auto-import",
 	"version": "1.0.1",
 	"description": "Automatically imports required web components.",
-	"license": "MIT",
+	"license": "Apache-2.0",
 	"author": {
 		"name": "Kristoffer Roen-Lie",
-		"url": "https://github.com/RoenLie"
+		"url": "https://github.com/arcmantle"
 	},
 	"files": [
 		"dist",
