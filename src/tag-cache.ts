@@ -48,7 +48,7 @@ export const createTagCache = async (
 export const getUsedTags = (
 	text: string,
 	whitelist: RegExp[],
-	tagExp = /<\/([\w-]+)>/g,
+	tagExp: RegExp = /<\/([\w-]+)>/g,
 ): Set<string> => {
 	return new Set([ ...text.matchAll(tagExp) ]
 		.map(([ _, tagName ]) => tagName)
@@ -64,8 +64,8 @@ export async function* getFiles(
 	directory: string,
 	pattern?: RegExp,
 ): AsyncGenerator<string, void, string | undefined> {
-	const dirents = await promises.readdir(directory, { withFileTypes: true });
-	for (const dirent of dirents) {
+	const entries = await promises.readdir(directory, { withFileTypes: true });
+	for (const dirent of entries) {
 		const res = path.resolve(directory, dirent.name);
 		if (dirent.isDirectory())
 			yield* getFiles(res, pattern);
@@ -77,7 +77,6 @@ export async function* getFiles(
 
 /**
  * Convert a `generated` async iterable to an array promise.
- * This is the same as in @eyeshare/shared
  * duplicate put in here to avoid needing a dependency on shared.
  */
 export async function genToArray<T>(generated: AsyncIterable<T>): Promise<T[]> {
