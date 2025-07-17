@@ -2,6 +2,10 @@
 	"name": "@arcmantle/vite-plugin-ce-auto-import",
 	"version": "1.0.0",
 	"description": "Automatically imports required web components.",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/arcmantle/vite-plugin-ce-auto-import.git"
+	},
 	"license": "Apache-2.0",
 	"author": "Kristoffer Roen-Lie",
 	"type": "module",
